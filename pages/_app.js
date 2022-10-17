@@ -1,7 +1,16 @@
-import '../styles/globals.css'
-
+import "../styles/globals.css";
+import { ThemeProvider } from "styled-components";
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  const theme = {
+    colors: {
+      primary: "orange",
+    },
+  };
+  return (
+    <ThemeProvider theme={theme}>
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;
